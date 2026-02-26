@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloque 1 – La energía no desaparece</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<header>
+<h1>Bloque 1 – La energía no desaparece</h1>
+<p class="subtitulo">2° Semestre | Prof. Adrián CruzH</p>
+</header>
+
+<main>
+
+<section>
+<h2>Lectura Obligatoria</h2>
+<p>
+Un microbús desciende por una avenida y frena bruscamente.
+Los frenos se calientan.
+Un café caliente se enfría al dejarlo en la mesa.
+Un celular se descarga después de usarlo.
+Un comal se calienta al encender el gas.
+</p>
+<p>
+En todos los casos parece que la energía desaparece.
+¿Realmente desaparece?
+</p>
+</section>
+
+<section>
+<h2>Comprensión Inicial</h2>
+
+<p>1️⃣ Cuando el microbús frena, ¿qué ocurre con la energía del movimiento?</p>
+<input type="text" id="p1">
+<button onclick="verificar1()">Verificar</button>
+<p id="r1"></p>
+
+<p>2️⃣ Cuando el café se enfría, ¿a dónde va el calor?</p>
+<input type="text" id="p2">
+<button onclick="verificar2()">Verificar</button>
+<p id="r2"></p>
+
+</section>
+
+<section>
+<h2>Algoritmo de Conservación</h2>
+
+<p>Escoge una escena y responde:</p>
+
+<p>Tipo de energía inicial:</p>
+<input type="text" id="energiaInicial">
+
+<p>¿En qué se transformó?</p>
+<input type="text" id="transformacion">
+
+<p>¿A dónde se transfirió?</p>
+<input type="text" id="transferencia">
+
+<p>¿Por qué no desapareció?</p>
+<input type="text" id="conservacion">
+
+<button onclick="evaluar()">Analizar Respuestas</button>
+
+<p id="resultadoFinal"></p>
+
+</section>
+
+<section>
+<h2>Corrección de Idea Errónea</h2>
+
+<p>Selecciona la afirmación incorrecta:</p>
+
+<select id="error">
+<option value="">Selecciona una opción</option>
+<option value="1">La energía se gasta cuando uso mi celular.</option>
+<option value="2">El calor desaparece cuando el café se enfría.</option>
+<option value="3">La energía se crea cuando prendemos un foco.</option>
+</select>
+
+<button onclick="corregir()">Corregir</button>
+
+<p id="correccion"></p>
+
+</section>
+
+</main>
+
+<script>
+
+function verificar1(){
+let respuesta = document.getElementById("p1").value.toLowerCase();
+if(respuesta.includes("calor") || respuesta.includes("termica")){
+document.getElementById("r1").innerHTML = "Correcto. Parte de la energía cinética se transforma en energía térmica.";
+}else{
+document.getElementById("r1").innerHTML = "Revisa: ¿por qué los frenos se calientan?";
+}
+}
+
+function verificar2(){
+let respuesta = document.getElementById("p2").value.toLowerCase();
+if(respuesta.includes("ambiente") || respuesta.includes("aire")){
+document.getElementById("r2").innerHTML = "Correcto. El calor se transfiere al entorno.";
+}else{
+document.getElementById("r2").innerHTML = "Piensa: el calor no desaparece, se transfiere.";
+}
+}
+
+function evaluar(){
+let energia = document.getElementById("energiaInicial").value;
+let trans = document.getElementById("transformacion").value;
+let transf = document.getElementById("transferencia").value;
+let cons = document.getElementById("conservacion").value;
+
+if(energia !== "" && trans !== "" && transf !== "" && cons !== ""){
+document.getElementById("resultadoFinal").innerHTML = "Excelente. Has aplicado el principio de conservación de la energía.";
+}else{
+document.getElementById("resultadoFinal").innerHTML = "Debes completar todos los campos.";
+}
+}
+
+function corregir(){
+let opcion = document.getElementById("error").value;
+
+if(opcion === "1"){
+document.getElementById("correccion").innerHTML = "La energía no se gasta. Se transforma en otras formas.";
+}
+else if(opcion === "2"){
+document.getElementById("correccion").innerHTML = "El calor no desaparece. Se transfiere al entorno.";
+}
+else if(opcion === "3"){
+document.getElementById("correccion").innerHTML = "La energía no se crea. Solo se transforma.";
+}
+else{
+document.getElementById("correccion").innerHTML = "Selecciona una opción.";
+}
+}
+
+</script>
+
+</body>
+</html>
