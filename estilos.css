@@ -1,0 +1,56 @@
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f4f6f9;
+color: #222;
+text-align: center;
+}
+
+header {
+background-color: #1e3a5f;
+color: white;
+padding: 20px;
+}
+
+.subtitulo {
+font-size: 0.9em;
+opacity: 0.8;
+}
+
+main {
+padding: 20px;
+}
+
+.bienvenida {
+margin-bottom: 30px;
+}
+
+.menu {
+margin-top: 20px;
+}
+
+.boton {
+display: block;
+background-color: #2d89ef;
+color: white;
+text-decoration: none;
+padding: 15px;
+margin: 10px auto;
+width: 90%;
+max-width: 400px;
+border-radius: 8px;
+font-weight: bold;
+transition: 0.3s;
+}
+
+.boton:hover {
+background-color: #1b5fbd;
+}
+
+footer {
+margin-top: 40px;
+padding: 15px;
+background-color: #ddd;
+font-size: 0.9em;
+}
